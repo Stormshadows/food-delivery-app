@@ -33,6 +33,9 @@ const Header = () => {
    }
   };
 
+  const logout = () => {
+    
+  }
   return (
     <header className='fixed z-50 w-screen  p-6 px-16'>
     {/* desktop & tab ,for mobile its hidden , for medium its set */}
@@ -81,7 +84,12 @@ const Header = () => {
         
       }
         
-        <p className='px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base'>Log out<MdLogout/></p>
+        <p className='px-4 py-2  flex items-center gap-3 cursor-pointer
+         hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base' 
+         onClick={logout}>
+
+          Log out<MdLogout/>
+        </p>
     </motion.div>
       )
     }
