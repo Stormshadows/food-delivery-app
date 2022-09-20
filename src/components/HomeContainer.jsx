@@ -22,7 +22,7 @@ const HomeContainer = () => {
         </div>
 
         <p className="text-[2.5rem]  lg:text-[4.5rem] font-bold tracking-wide text-headingColor ">
-          Fastest delivery to you in{" "}
+          Fastest delivery to you in {" "}
           <span className="text-orange-600 text-[3rem] lg:text-[5rem]">
             Minutes
           </span>
