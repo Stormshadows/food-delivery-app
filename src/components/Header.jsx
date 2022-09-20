@@ -34,8 +34,15 @@ const Header = () => {
   };
 
   const logout = () => {
-    
-  }
+    setIsMenu(false)
+    localStorage.clear();
+
+    dispatch({
+      type: actionType.SET_USER,
+      user: null,
+    });
+
+  };
   return (
     <header className='fixed z-50 w-screen  p-6 px-16'>
     {/* desktop & tab ,for mobile its hidden , for medium its set */}
