@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {app} from '../firebase.config';
 import avatar from "../img/avatar.png"
-import Logo from "../img/logo.png";
+import Logo from "../img/logo1.png";
 import { useStateValue } from '../context/StateProvider';
 import { actionType } from '../context/reducer';
 
@@ -50,7 +50,7 @@ const Header = () => {
     <div className='hidden md:flex w-full h-full items-center justify-between'>  
     <div className='flex items-center gap-2'>
         <img src={Logo} className='w-8 object-cover' alt='logo'/>
-        <p className='text-headingColor text-xl front-bold'>City</p>
+        <p className='text-headingColor text-xl front-bold'>FoodX</p>
         </div>
 
    <div className='flex items-center gap-8'>
