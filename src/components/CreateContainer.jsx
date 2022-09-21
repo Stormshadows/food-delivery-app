@@ -4,12 +4,14 @@ import {
   MdFastfood,
   MdCloudUpload,
   MdDelete,
-  MdAttachMoney,
 } from "react-icons/md";
+import {BiRupee} from "react-icons/bi";
 import { categories } from "../utils/data";
 import Loader from "./Loader";
 import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../firebase.config";
+import { saveItem } from "../utils/firebaseFunctions";
+import { clear } from "@testing-library/user-event/dist/clear";
 
 const CreateContainer = () => {
   const [title, setTitle] = useState("");
@@ -82,13 +84,23 @@ const CreateContainer = () => {
       }, 4000);
         }else{
           const data ={
-            id : `$(Date.now())`,
+            id : `${Date.now()}`,
             title : title,
             imageURL : imageAsset,
             category : category ,
             qty : 1 ,
             price : price
           }
+          saveItem(data)
+          setIsLoading(false);
+          setFields(true);
+          setMsg("Data uploaded successfully");
+          clearData();
+            setAlertStatus("success");
+            setTimeout(() => {
+                setFields(false);
+                
+            }, 4000);
         }
     } catch (error) {
       console.log(error);
@@ -102,6 +114,15 @@ const CreateContainer = () => {
       
     }
   };
+
+  const clearData = () => {
+    setTitle("");
+    setImageAsset(null);
+    setPrice("");
+    setCategory("Select category");
+  };
+
+
   return (
     <div className="w-full min-h-screen flex items-center justify-center">
       <div className="w-[90%] md:w-[75%] border border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center gap-4">
@@ -202,7 +223,7 @@ const CreateContainer = () => {
         </div>
         <div className="w-full flex flex-col md:flex-row items-center gap-3">
           <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <MdAttachMoney className="text-gray-700 text-2xl" />
+            <BiRupee className="text-gray-700 text-2xl" />
             <input
               type="text"
               required
