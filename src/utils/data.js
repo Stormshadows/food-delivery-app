@@ -21,3 +21,36 @@ export const herodata = [
   },
   { id: 4, name: "Sushi", desc: "Ngiri ", price: "300", imagesrc: FI1 },
 ];
+
+export const categories = [
+  {
+    id : 1,
+    name : "Chicken",
+    urlParamName : "chicken",
+  },
+  {
+    id : 2,
+    name : "Rice",
+    urlParamName : "rice",
+  },
+  {
+    id : 3,
+    name : "Fish",
+    urlParamName : "fish",
+  },
+  {
+    id : 4,
+    name : "Ice cream",
+    urlParamName : "icecream",
+  },
+  {
+    id : 5,
+    name : "Beverages",
+    urlParamName : "beverages",
+  },
+  {
+    id : 6,
+    name : "Fruits",
+    urlParamName : "fruits",
+  },
+];
