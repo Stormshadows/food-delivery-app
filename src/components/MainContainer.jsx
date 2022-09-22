@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import RowContainer from "./RowContainer";
 import { useStateValue } from "../context/StateProvider";
+import CartContainer from "./CartContainer";
 
 const MainContainer = () => {
-  const [{ fooditems }, dispatch] = useStateValue();
+  const [{ fooditems,cartShow }, dispatch] = useStateValue();
 
   const [scrollValue, setscrollValue] = useState(0);
 
@@ -49,6 +50,9 @@ const MainContainer = () => {
           data={fooditems?.filter((n) => n.category === "fruits")}
         />
       </section>
+      {cartShow && (
+        <CartContainer/>
+      )}
     </div>
   );
 };
