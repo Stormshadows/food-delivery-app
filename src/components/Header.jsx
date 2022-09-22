@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { MdShoppingCart, MdAdd, MdLogout } from "react-icons/md";
 import { motion } from "framer-motion";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -13,7 +13,7 @@ const Header = () => {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  const [{ user,cartShow,cartItems }, dispatch] = useStateValue();
+  const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
   const [isMenu, setIsMenu] = useState(false);
 
@@ -47,41 +47,55 @@ const Header = () => {
       type: actionType.SET_CART_SHOW,
       cartShow: !cartShow,
     });
-
-  }
+  };
   return (
     <header className="fixed z-50 w-screen  p-6 px-16">
       {/* desktop & tab ,for mobile its hidden , for medium its set */}
 
       <div className="hidden md:flex w-full h-full items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src={Logo} className="w-8 object-cover" alt="logo" />
+          <Link to="/">
+            <img src={Logo} className="w-8 object-cover" alt="logo" />
+          </Link>
           <p className="text-headingColor text-xl front-bold">FoodX</p>
         </div>
 
         <div className="flex items-center gap-8">
           <ul className="flex items-center gap-8 ">
-            <li className="text-base text-textColor hover:text-headingColor cursor-pointer"
-            onClick={() => setIsMenu(false)}>
-              Home
+            <li>
+              <Link
+                to="/"
+                className="text-base text-textColor hover:text-headingColor cursor-pointer"
+                onClick={() => setIsMenu(false)}
+              >
+                {" "}
+                Home
+              </Link>
             </li>
-            <li className="text-base text-textColor hover:text-headingColor" onClick={() => setIsMenu(false)}>
-              Menu
-            </li>
-            <li className="text-base text-textColor hover:text-headingColor" onClick={() => setIsMenu(false)}>
-              About Us
-            </li>
-            <li className="text-base text-textColor hover:text-headingColor" onClick={() => setIsMenu(false)}>
-              Service
+            <li>
+              <Link
+                to="/menu"
+                className="text-base text-textColor hover:text-headingColor"
+                onClick={() => setIsMenu(false)}
+              >
+                {" "}
+                Menu
+              </Link>
             </li>
           </ul>
+          <Outlet />
           {/* cart */}
-          <div className="relative flex items-center justify-center" onClick={showCart}>
+          <div
+            className="relative flex items-center justify-center"
+            onClick={showCart}
+          >
             <MdShoppingCart className="text-textColor text-2xl cursor-pointer" />
             {cartItems && cartItems.length > 0 && (
               <div className="absolute -top-3 -right-3 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
-              <p className="text-xs text-white font-semibold">{cartItems.length}</p>
-            </div>
+                <p className="text-xs text-white font-semibold">
+                  {cartItems.length}
+                </p>
+              </div>
             )}
           </div>
           <div className="relative">
@@ -103,7 +117,8 @@ const Header = () => {
                   <Link to={"/createItem"}>
                     <p
                       className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all 
-          duration-100 ease-in-out text-textColor text-base " onClick={() => setIsMenu(false)}
+          duration-100 ease-in-out text-textColor text-base "
+                      onClick={() => setIsMenu(false)}
                     >
                       New Item <MdAdd />
                     </p>
