@@ -6,7 +6,7 @@ import { RiRefreshFill } from "react-icons/ri";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 import EmptyCart from "../img/emptyCart.svg";
-import CartItem from "./CartItem";
+
 
 const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
@@ -44,7 +44,7 @@ const CartContainer = () => {
       key_secret: "yW1ep2PVQjZ9jslMnmclZSp0",
       amount: ((tot+10)*100).toString(),
       currency: "INR",
-      name: "Max",
+      name: "FoodX",
       description: "Test Transaction",
       // image: "",
       handler: function (response) {
