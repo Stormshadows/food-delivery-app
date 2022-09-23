@@ -49,9 +49,9 @@ const CartContainer = () => {
       description: "Test Transaction",
       image:
         "https://firebasestorage.googleapis.com/v0/b/foodapp-855d2.appspot.com/o/logo%2Flogo1.png?alt=media&token=1d575c01-f624-4bd4-8201-7a9fe8191b0b",
-      handler: function (response) {
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
+      handler: async function (response) {
+        alert("Payment id :" + response.razorpay_payment_id);
+        alert("Order id : "+response.razorpay_order_id);
         alert(response.razorpay_signature);
       },
       prefill: {
