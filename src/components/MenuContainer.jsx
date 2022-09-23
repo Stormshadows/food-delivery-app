@@ -8,8 +8,8 @@ import { useStateValue } from "../context/StateProvider";
 const MenuContainer = () => {
   
   const [filter, setfilter] = useState("chicken");
-  const [{ fooditems,cartShow  }, dispatch] = useStateValue();
-
+  const [{ fooditems,cartShow  ,cartItems}, dispatch] = useStateValue();
+  console.log(cartItems)
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <p

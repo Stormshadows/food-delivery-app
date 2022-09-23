@@ -6,8 +6,10 @@ import RowContainer from "./RowContainer";
 import { useStateValue } from "../context/StateProvider";
 import CartContainer from "./CartContainer";
 
+
 const MainContainer = () => {
-  const [{ fooditems,cartShow }, dispatch] = useStateValue();
+  const [{ fooditems,cartShow,cartItems }, dispatch] = useStateValue();
+  
 
   const [scrollValue, setscrollValue] = useState(0);
 
@@ -18,7 +20,8 @@ const MainContainer = () => {
       <HomeContainer />
       {cartShow && (
         <CartContainer/>
-      )}
+      )
+      }
     </div>
   );
 };

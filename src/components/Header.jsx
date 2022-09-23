@@ -40,6 +40,7 @@ const Header = () => {
       type: actionType.SET_USER,
       user: null,
     });
+    
   };
 
   const showCart = () => {
@@ -47,6 +48,7 @@ const Header = () => {
       type: actionType.SET_CART_SHOW,
       cartShow: !cartShow,
     });
+
   };
   return (
     <header className="fixed z-50 w-screen  p-6 px-16">
@@ -98,6 +100,7 @@ const Header = () => {
               </div>
             )}
           </div>
+          
           <div className="relative">
             <motion.img
               whileTap={{ scale: 0.6 }}
