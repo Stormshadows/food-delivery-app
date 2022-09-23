@@ -6,13 +6,14 @@ import { RiRefreshFill } from "react-icons/ri";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 import EmptyCart from "../img/emptyCart.svg";
-
+import CartItem from "./CartItem";
 
 const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
   const [flag, setFlag] = useState(1);
   const [tot, setTot] = useState(0);
 
+  console.log(cartShow)
 
   const showCart = () => {
     dispatch({
@@ -26,7 +27,7 @@ const CartContainer = () => {
       return accumulator + item.qty * item.price;
     }, 0);
     setTot(totalPrice);
-    console.log(tot);
+    // console.log(tot);
     // console.log(cartItems);
   }, [tot, flag]);
 
@@ -40,9 +41,9 @@ const CartContainer = () => {
 
   const checkoutHandler = () => {
     var options = {
-      key: "rzp_test_ySC6gEhAPKfQhM",
-      key_secret: "yW1ep2PVQjZ9jslMnmclZSp0",
-      amount: ((tot+10)*100).toString(),
+      key: process.env.REACT_APP_RAZORPAY_KEY,
+      key_secret: process.env.REACT_APP_RAZORPAY_SECRET,
+      amount: ((tot + 10) * 100).toString(),
       currency: "INR",
       name: "FoodX",
       description: "Test Transaction",
@@ -130,7 +131,7 @@ const CartContainer = () => {
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
-                onClick={ checkoutHandler}
+                onClick={checkoutHandler}
               >
                 Check out
               </motion.button>

@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import HomeContainer from "./HomeContainer";
-import { motion } from "framer-motion";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import RowContainer from "./RowContainer";
+
 import { useStateValue } from "../context/StateProvider";
 import CartContainer from "./CartContainer";
 
-
 const MainContainer = () => {
-  const [{ fooditems,cartShow,cartItems }, dispatch] = useStateValue();
-  
+  const [{ fooditems, cartShow, cartItems }, dispatch] = useStateValue();
 
   const [scrollValue, setscrollValue] = useState(0);
 
@@ -18,10 +14,7 @@ const MainContainer = () => {
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center overflow-x-hidden">
       <HomeContainer />
-      {cartShow && (
-        <CartContainer/>
-      )
-      }
+      {cartShow && (<CartContainer />)}
     </div>
   );
 };
