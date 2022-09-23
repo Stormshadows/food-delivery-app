@@ -7,27 +7,24 @@ import { actionType } from "../context/reducer";
 
 const RowContainer = ({ flag, data, scrollValue }) => {
   //   console.log(data);
-  const [items, setitems] = useState([]);
+  //const [items, setitems] = useState([]);
 
   const rowContainer = useRef();
   const [{ cartItems }, dispatch] = useStateValue();
 
-  const addToCart = () => {
-    
+  const addToCart = (item) => {
+    const newCartItems = [...cartItems, item];
+    localStorage.setItem("cartItems", JSON.stringify(newCartItems));
     dispatch({
       type: actionType.SET_CART_ITEMS,
-      cartItems: items,
+      cartItems: newCartItems,
     });
-    localStorage.setItem("cartItems", JSON.stringify(items));
   };
 
   useEffect(() => {
     rowContainer.current.scrollLeft += scrollValue;
   }, [scrollValue]);
 
-  useEffect(() => {
-    addToCart();
-  }, [items]);
   return (
     <div
       ref={rowContainer}
@@ -59,7 +56,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
               <motion.div
                 whileTap={{ scale: 0.75 }}
                 className="w-8 h-8 rounded-full  bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md"
-                onClick={() => setitems([...cartItems, item])}
+                onClick={() => addToCart(item)}
               >
                 <MdShoppingCart className="text-white" />
               </motion.div>
