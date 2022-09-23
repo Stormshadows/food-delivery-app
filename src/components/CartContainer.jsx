@@ -13,7 +13,7 @@ const CartContainer = () => {
   const [flag, setFlag] = useState(1);
   const [tot, setTot] = useState(0);
 
-  console.log(cartShow)
+  console.log(cartShow);
 
   const showCart = () => {
     dispatch({
@@ -47,7 +47,8 @@ const CartContainer = () => {
       currency: "INR",
       name: "FoodX",
       description: "Test Transaction",
-      // image: "",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/foodapp-855d2.appspot.com/o/logo%2Flogo1.png?alt=media&token=1d575c01-f624-4bd4-8201-7a9fe8191b0b",
       handler: function (response) {
         alert(response.razorpay_payment_id);
         alert(response.razorpay_order_id);
