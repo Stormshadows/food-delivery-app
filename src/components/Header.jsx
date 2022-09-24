@@ -84,7 +84,7 @@ const Header = () => {
                 onClick={() => setIsMenu(false)}
               >
                 {" "}
-                Menu11
+                Menu
               </Link>
             </li>
           </ul>
