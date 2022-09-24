@@ -18,6 +18,7 @@ const Header = () => {
   const [isMenu, setIsMenu] = useState(false);
 
   const login = async () => {
+    try{
     if (!user) {
       const {
         user: { refreshToken, providerData },
@@ -30,7 +31,11 @@ const Header = () => {
     } else {
       setIsMenu(!isMenu);
     }
-  };
+  }catch(err){
+    console.log(err);
+    alert(err.message);
+  }
+};
 
   const logout = () => {
     setIsMenu(false);
