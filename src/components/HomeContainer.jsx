@@ -17,7 +17,23 @@ const HomeContainer = () => {
     >
       <div className="py-2 flex-1 flex-col items-start  justify-center gap-6">
         <div className="flex items-center gap-2 justify-center bg-orange-100 px-4 py-1 rounded-full">
+          <p className="text-base text-orange-500 font-semibold">Order</p>
+          <div className="w-8 h-8 bg-white rounded-full overflow-hidden drop-shadow-xl ">
+            <img
+              src={Delivery}
+              className="w-full h-full object-contain"
+              alt="delivery"
+            />
+          </div>
           <p className="text-base text-orange-500 font-semibold">Delivery</p>
+          <div className="w-8 h-8 bg-white rounded-full overflow-hidden drop-shadow-xl ">
+            <img
+              src={Delivery}
+              className="w-full h-full object-contain"
+              alt="delivery"
+            />
+          </div>
+          <p className="text-base text-orange-500 font-semibold">Repeat</p>
           <div className="w-8 h-8 bg-white rounded-full overflow-hidden drop-shadow-xl ">
             <img
               src={Delivery}
@@ -28,17 +44,14 @@ const HomeContainer = () => {
         </div>
 
         <p className="text-[2.5rem]  lg:text-[4.5rem] font-bold tracking-wide text-headingColor ">
-          Fastest delivery to you in{" "}
+          Faaaaaastest delivery to you in{" "}
           <span className="text-orange-600 text-[3rem] lg:text-[5rem]">
             Minutes
           </span>
         </p>
 
-        <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
-          consequuntur voluptatem recusandae, eum tempore ex possimus non esse
-          iure veniam inventore nam. Accusantium, consectetur in. Doloribus amet
-          corrupti voluptatum quo?
+        <p className="text-2xl text-textColor font-semibold text-center md:text-left md:w-[80%]">
+          Discover good food for good mood 
         </p>
 
         <button
