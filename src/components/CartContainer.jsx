@@ -41,7 +41,7 @@ const CartContainer = () => {
 
   const checkoutHandler = () => {
     var options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY,
+      key_id: process.env.REACT_APP_RAZORPAY_KEY,
       key_secret: process.env.REACT_APP_RAZORPAY_SECRET,
       amount: ((tot + 10) * 100).toString(),
       currency: "INR",
@@ -141,6 +141,7 @@ const CartContainer = () => {
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
+                
               >
                 Log in to checkout
               </motion.button>
