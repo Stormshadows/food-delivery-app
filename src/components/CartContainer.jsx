@@ -41,7 +41,7 @@ const CartContainer = () => {
 
   const checkoutHandler = () => {
     var options = {
-      key_id: process.env.REACT_APP_RAZORPAY_KEY,
+      key: process.env.REACT_APP_RAZORPAY_KEY,
       key_secret: process.env.REACT_APP_RAZORPAY_SECRET,
       amount: ((tot + 10) * 100).toString(),
       currency: "INR",
