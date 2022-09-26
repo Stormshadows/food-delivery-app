@@ -13,7 +13,7 @@ const CartContainer = () => {
   const [flag, setFlag] = useState(1);
   const [tot, setTot] = useState(0);
 
-  console.log(cartShow);
+  // console.log(user);
 
   const showCart = () => {
     dispatch({
@@ -40,6 +40,9 @@ const CartContainer = () => {
   };
 
   const checkoutHandler = () => {
+    
+    
+
     var options = {
       key: process.env.REACT_APP_RAZORPAY_KEY,
       key_secret: process.env.REACT_APP_RAZORPAY_SECRET,
@@ -55,8 +58,8 @@ const CartContainer = () => {
         alert(response.razorpay_signature);
       },
       prefill: {
-        name: "Max",
-        email: "maxmario2001@gmail.com",
+        name: user.displayName,
+        email: user.email,
         contact: "7204606765",
       },
       notes: {
