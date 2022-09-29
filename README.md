@@ -12,6 +12,10 @@ Features:
 * Login to google account
 * Payments like UPI,card.
 
+## Instructions
+
+### `yarn start`
+
 ## Screenshots
 
 ### `Home`
