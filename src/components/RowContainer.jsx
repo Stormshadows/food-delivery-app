@@ -5,7 +5,7 @@ import NotFound from "../img/NotFound.svg";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 
-const RowContainer = ({ flag, data, scrollValue }) => {
+const RowContainer = ({ flag, data}) => {
   //   console.log(data);
   //const [items, setitems] = useState([]);
 
@@ -21,9 +21,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
     });
   };
 
-  useEffect(() => {
-    rowContainer.current.scrollLeft += scrollValue;
-  }, [scrollValue]);
+ 
 
   return (
     <div

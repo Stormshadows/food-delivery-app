@@ -40,11 +40,13 @@ const Header = () => {
   const logout = () => {
     setIsMenu(false);
     localStorage.clear();
-
+  
     dispatch({
       type: actionType.SET_USER,
       user: null,
     });
+    
+    
   };
 
   const showCart = () => {
