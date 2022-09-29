@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# FoodX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Food delivery web application using the Razorpay API
 
-## Available Scripts
+Features:
 
-In the project directory, you can run:
+* Add to cart functionality
+* Remove from cart functionality
+* Product Filtering functionality
+* Cart container
+* Modern UI design
+* Login to google account
+* Payments like UPI,card.
 
-### `yarn start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Home`
+![home_logged_in](https://user-images.githubusercontent.com/63772315/193062771-ab5fc65c-f148-4272-a846-4942a7c308b4.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Menu`
+![menu](https://user-images.githubusercontent.com/63772315/193062869-12019bf2-ffc3-4c79-a6ae-e0c4c7490304.png)
 
-### `yarn test`
+### `Cart`
+![empty_cart_user_logged_out](https://user-images.githubusercontent.com/63772315/193063216-320514f1-d30f-44b6-bd5a-b3e0c0d05fcf.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![item_added_to_cart](https://user-images.githubusercontent.com/63772315/193063231-45e268ad-502d-4cfe-a8f5-4a5a4df38af2.png)
 
-### `yarn build`
+### `Admin`
+![restaurant_admin_to_add_product](https://user-images.githubusercontent.com/63772315/193063343-ddb6986b-ee6f-4b8f-a2d4-9c7f3b38c8ed.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `Payment`
+![razor_pay_checkout_page](https://user-images.githubusercontent.com/63772315/193063423-54934d29-407e-45b5-8061-58db0f86125d.png)
