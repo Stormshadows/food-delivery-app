@@ -18,35 +18,33 @@ const Header = () => {
   const [isMenu, setIsMenu] = useState(false);
 
   const login = async () => {
-    try{
-    if (!user) {
-      const {
-        user: { refreshToken, providerData },
-      } = await signInWithPopup(firebaseAuth, provider);
-      dispatch({
-        type: actionType.SET_USER,
-        user: providerData[0],
-      });
-      localStorage.setItem("user", JSON.stringify(providerData[0]));
-    } else {
-      setIsMenu(!isMenu);
+    try {
+      if (!user) {
+        const {
+          user: { refreshToken, providerData },
+        } = await signInWithPopup(firebaseAuth, provider);
+        dispatch({
+          type: actionType.SET_USER,
+          user: providerData[0],
+        });
+        localStorage.setItem("user", JSON.stringify(providerData[0]));
+      } else {
+        setIsMenu(!isMenu);
+      }
+    } catch (err) {
+      console.log(err);
+      alert(err.message);
     }
-  }catch(err){
-    console.log(err);
-    alert(err.message);
-  }
-};
+  };
 
   const logout = () => {
     setIsMenu(false);
     localStorage.clear();
-  
+
     dispatch({
       type: actionType.SET_USER,
       user: null,
     });
-    
-    
   };
 
   const showCart = () => {
