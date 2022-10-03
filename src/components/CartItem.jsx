@@ -10,13 +10,13 @@ const CartItem = ({ item,setFlag,flag }) => {
   const [{ cartItems, user }, dispatch] = useStateValue();
  
 
-  const cartDispatch = () => {
-    localStorage.setItem("cartItems", JSON.stringify(items));
-    dispatch({
-      type: actionType.SET_CART_ITEMS,
-      cartItems: items,
-    });
-  };
+  // const cartDispatch = () => {
+  //   localStorage.setItem("cartItems", JSON.stringify(items));
+  //   dispatch({
+  //     type: actionType.SET_CART_ITEMS,
+  //     cartItems: items,
+  //   });
+  // };
 
   const updateQty = (action, id) => {
     if (action == "add") {
