@@ -5,10 +5,7 @@ import NotFound from "../img/NotFound.svg";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 
-const RowContainer = ({ flag, data}) => {
-  //   console.log(data);
-  //const [items, setitems] = useState([]);
-
+const RowContainer = ({ flag, data }) => {
   const rowContainer = useRef();
   const [{ cartItems }, dispatch] = useStateValue();
 
@@ -20,8 +17,6 @@ const RowContainer = ({ flag, data}) => {
       cartItems: newCartItems,
     });
   };
-
- 
 
   return (
     <div
